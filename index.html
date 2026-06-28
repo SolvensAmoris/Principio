@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Esta línea es crucial para que TikTok y los celulares escalen bien la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Solvens Amoris | Enlaces</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #d4af37;
+            --purple: #c8a8ff;
+            --dark: #06010f;
+        }
+
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent; /* Quita el parpadeo azul en móviles al tocar un botón */
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: #e8dcc8;
+            
+            /* --- AQUÍ CONECTAS TU IMAGEN --- 
+               Asegúrate de que la imagen esté en la misma carpeta o ajusta la ruta */
+            background-image: url('fondo-magico.jpg'); 
+            
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Velo oscuro para asegurar que las letras siempre se lean */
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(6,1,15,0.3) 0%, rgba(6,1,15,0.95) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Contenedor central simulando la pantalla del celular */
+        .link-tree {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 480px;
+            padding: 30px 20px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Encabezado --- */
+        .header {
+            text-align: center;
+            margin-top: 130px; /* Este espacio deja que el astrolabio de tu imagen brille arriba */
+            margin-bottom: 40px;
+            width: 100%;
+        }
+
+        .title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .tagline {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--purple);
+            text-transform: uppercase;
+        }
+
+        /* --- Botones / Enlaces --- */
+        .links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* Espacio entre botones */
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            background: rgba(15, 5, 25, 0.55);
+            backdrop-filter: blur(10px); /* Efecto cristalino */
+            -webkit-backdrop-filter: blur(10px); /* Para iPhone */
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s ease, border 0.2s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.97); /* Se hunde ligeramente al tocarlo */
+        }
+
+        /* Variantes de botones */
+        .btn-gold {
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.05);
+        }
+        .btn-purple {
+            border: 1px solid rgba(142, 68, 173, 0.4);
+            box-shadow: inset 0 0 15px rgba(142, 68, 173, 0.05);
+        }
+
+        .btn-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 35px;
+            text-align: center;
+        }
+        
+        .btn-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-title {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+            letter-spacing: 1px;
+        }
+
+        .btn-gold .btn-title { color: var(--gold); }
+        .btn-purple .btn-title { color: #ffffff; }
+
+        .btn-subtitle {
+            font-size: 0.65rem;
+            letter-spacing: 1px;
+            color: rgba(232, 220, 200, 0.6);
+            text-transform: uppercase;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .quote {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .moon {
+            color: var(--purple);
+            letter-spacing: 8px;
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- El velo oscuro -->
+    <div class="overlay"></div>
+
+    <!-- Contenido principal -->
+    <div class="link-tree">
+        
+        <header class="header">
+            <h1 class="title">Solvens Amoris</h1>
+            <p class="tagline">Tecnología · Conciencia · Magia</p>
+        </header>
+        
+        <main class="links">
+            
+            <a href="#" class="btn btn-gold">
+                <span class="btn-icon">🍷</span>
+                <div class="btn-text-wrapper">
+                    <span class="btn-title">El Lenguaje de la Vid</span>
+                    <span class="btn-subtitle">Introducción a la Enología</span>
+                </div>
+            </a>
+
+            <a href="#" class="btn btn-purple">
+                <span class="btn-icon">⏱️</span>
+                <div class="btn-text-wrapper">
+                    <span class="btn-title">Reloj Astrológico</span>
+                    <span class="btn-subtitle">Interpreta tu destino</span>
+                </div>
+            </a>
+
+            <a href="#" class="btn btn-purple">
+                <span class="btn-icon">👁️</span>
+                <div class="btn-text-wrapper">
+                    <span class="btn-title">Transmutación y Sincronía</span>
+                    <span class="btn-subtitle">Acceso a Lives</span>
+                </div>
+            </a>
+
+            <a href="#" class="btn btn-purple">
+                <span class="btn-icon">🔮</span>
+                <div class="btn-text-wrapper">
+                    <span class="btn-title">Pablo Alquimista</span>
+                    <span class="btn-subtitle">Certificación Internacional</span>
+                </div>
+            </a>
+
+        </main>
+
+        <footer>
+            <p class="quote">"Lo que buscas, también te busca."</p>
+            <div class="moon">🌑🌒🌓🌔🌕🌖🌗🌘</div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
