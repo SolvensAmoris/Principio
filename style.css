@@ -84,12 +84,12 @@ body {
 .sub-title {
     font-family: 'Cinzel', serif;
     font-size: 0.9rem;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     color: var(--text-white);
     margin-bottom: 30px;
 }
 
-/* --- PERFIL --- */
+/* --- AVATAR Y PERFIL CON ANILLO GIRATORIO --- */
 .profile-section {
     margin-bottom: 40px;
     display: flex;
@@ -99,35 +99,47 @@ body {
 
 .avatar-container {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 120px; 
+    height: 120px;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.avatar {
+.avatar-img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+    border: 2px solid var(--gold-main);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     object-fit: cover;
-    border: 2px solid var(--purple-light);
-    position: relative;
-    z-index: 2;
+    z-index: 2; /* Imagen por encima del anillo */
 }
 
 .avatar-ring {
     position: absolute;
-    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    width: 135px; /* Un poco más grande para envolver la imagen */
+    height: 135px;
     border-radius: 50%;
-    border: 1px dashed var(--purple-glow);
-    animation: spin 10s linear infinite;
+    border: 2px dashed var(--purple-light); 
+    box-shadow: 0 0 10px var(--purple-glow);
+    animation: rotate-ring 15s linear infinite;
+    z-index: 1; /* Anillo por debajo de la imagen */
 }
 
-@keyframes spin { 100% { transform: rotate(360deg); } }
+/* Animación del anillo */
+@keyframes rotate-ring {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 
 .username {
     font-family: 'Cinzel', serif;
     font-size: 1.2rem;
     letter-spacing: 1px;
+    color: var(--gold-light);
+    margin-top: 10px;
 }
 
 /* --- BOTONES --- */
