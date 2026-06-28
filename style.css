@@ -1,15 +1,16 @@
-/* --- VARIABLES DE COLOR --- */
+/* --- VARIABLES DE DISEÑO --- */
 :root {
     --bg-dark: #07000e;
     --purple-glow: #6a0dad;
     --purple-light: #9d4edd;
     --gold-main: #d4af37;
     --gold-light: #f3e5ab;
+    --whatsapp-green: #25D366;
     --text-white: #e0e0e0;
     --text-muted: #a0a0a0;
 }
 
-/* --- RESET Y BASE --- */
+/* --- CONFIGURACIÓN BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -27,13 +28,12 @@ body {
     position: relative;
 }
 
-/* --- FONDOS ANIMADOS --- */
+/* --- CÓSMICO FONDO ANIMADO --- */
 .stars, .twinkling {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100%; height: 100%;
     display: block;
-    z-index: 0;
 }
 .stars {
     background: #000 url('https://www.transparenttextures.com/patterns/stardust.png') repeat top center;
@@ -43,14 +43,14 @@ body {
     background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat top center;
     z-index: -1;
     animation: move-twink-back 200s linear infinite;
-    opacity: 0.3;
+    opacity: 0.25;
 }
 @keyframes move-twink-back {
-    from {background-position: 0 0;}
-    to {background-position: -10000px 5000px;}
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
 }
 
-/* --- CONTENEDOR PRINCIPAL --- */
+/* --- CONTENEDOR CENTRAL DE LA LANDING --- */
 .main-container {
     position: relative;
     z-index: 1;
@@ -61,35 +61,36 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: radial-gradient(circle at center, rgba(30,0,50,0.6) 0%, rgba(7,0,14,0.9) 80%);
+    background: radial-gradient(circle at center, rgba(30,0,50,0.5) 0%, rgba(7,0,14,0.85) 80%);
 }
 
-/* --- HEADER --- */
+/* --- LOGO / TITULARES --- */
 .zodiac-icon {
     font-size: 2.5rem;
     color: var(--gold-main);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     text-shadow: 0 0 20px var(--gold-main);
 }
 
 .main-title {
     font-family: 'Cinzel Decorative', serif;
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     color: var(--gold-light);
     letter-spacing: 2px;
-    margin-bottom: 5px;
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    margin-bottom: 6px;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 
 .sub-title {
     font-family: 'Cinzel', serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
     color: var(--text-white);
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    opacity: 0.9;
 }
 
-/* --- AVATAR Y PERFIL CON ANILLO GIRATORIO --- */
+/* --- PERFIL Y ANILLO ALQUÍMICO GIRATORIO --- */
 .profile-section {
     margin-bottom: 40px;
     display: flex;
@@ -114,21 +115,20 @@ body {
     border: 2px solid var(--gold-main);
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     object-fit: cover;
-    z-index: 2; /* Imagen por encima del anillo */
+    z-index: 2; /* Importante: queda sobre el anillo */
 }
 
 .avatar-ring {
     position: absolute;
-    width: 135px; /* Un poco más grande para envolver la imagen */
-    height: 135px;
+    width: 138px; /* Envuelve perfectamente al avatar */
+    height: 138px;
     border-radius: 50%;
     border: 2px dashed var(--purple-light); 
-    box-shadow: 0 0 10px var(--purple-glow);
-    animation: rotate-ring 15s linear infinite;
-    z-index: 1; /* Anillo por debajo de la imagen */
+    box-shadow: 0 0 12px var(--purple-glow);
+    animation: rotate-ring 20s linear infinite;
+    z-index: 1; /* Queda justo detrás del avatar */
 }
 
-/* Animación del anillo */
 @keyframes rotate-ring {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
@@ -139,10 +139,10 @@ body {
     font-size: 1.2rem;
     letter-spacing: 1px;
     color: var(--gold-light);
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
-/* --- BOTONES --- */
+/* --- BOTONES PREMIUM GENERALES --- */
 .links-container {
     width: 100%;
     display: flex;
@@ -155,11 +155,11 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding: 15px 25px;
-    background: rgba(10, 0, 20, 0.7);
+    padding: 18px 25px;
+    background: rgba(10, 0, 20, 0.75);
     border: 1px solid;
     position: relative;
-    transition: all 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: hidden;
 }
 
@@ -168,14 +168,14 @@ body {
     position: absolute;
     top: 5px; left: 5px; right: 5px; bottom: 5px;
     border: 1px solid;
-    opacity: 0.5;
+    opacity: 0.4;
     pointer-events: none;
 }
 
 .premium-button .icon {
     font-size: 1.8rem;
     margin-right: 20px;
-    width: 30px;
+    width: 35px;
     text-align: center;
 }
 
@@ -193,38 +193,60 @@ body {
 }
 
 .btn-desc {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
     color: var(--text-muted);
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
-/* Variantes de botones */
+/* --- VARIACIONES DE ESTILOS EN BOTONES --- */
+
+/* Estilo Oro */
 .premium-button.gold {
     border-color: var(--gold-main);
-    box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1), 0 0 15px rgba(212, 175, 55, 0.1);
+    box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.05), 0 0 15px rgba(212, 175, 55, 0.05);
 }
 .premium-button.gold::before { border-color: var(--gold-main); }
 .premium-button.gold .icon, .premium-button.gold .btn-title { color: var(--gold-main); }
 
 .premium-button.gold:hover {
-    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.3), 0 0 30px rgba(212, 175, 55, 0.4);
-    transform: translateY(-2px);
+    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.25), 0 0 25px rgba(212, 175, 55, 0.35);
+    transform: translateY(-3px);
+    background: rgba(20, 10, 30, 0.85);
 }
 
+/* Estilo Púrpura */
 .premium-button.purple {
     border-color: var(--purple-light);
-    box-shadow: inset 0 0 10px rgba(157, 78, 221, 0.1), 0 0 15px rgba(157, 78, 221, 0.1);
+    box-shadow: inset 0 0 10px rgba(157, 78, 221, 0.05), 0 0 15px rgba(157, 78, 221, 0.05);
 }
 .premium-button.purple::before { border-color: var(--purple-light); }
 .premium-button.purple .icon, .premium-button.purple .btn-title { color: var(--purple-light); }
 
 .premium-button.purple:hover {
-    box-shadow: inset 0 0 20px rgba(157, 78, 221, 0.3), 0 0 30px rgba(157, 78, 221, 0.4);
-    transform: translateY(-2px);
+    box-shadow: inset 0 0 20px rgba(157, 78, 221, 0.25), 0 0 25px rgba(157, 78, 221, 0.35);
+    transform: translateY(-3px);
+    background: rgba(20, 10, 30, 0.85);
 }
 
-/* --- FOOTER --- */
+/* Ajuste e Iconografía Especial de WhatsApp */
+.whatsapp-btn .whatsapp-icon-glow {
+    color: var(--whatsapp-green) !important;
+    text-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn:hover .whatsapp-icon-glow {
+    text-shadow: 0 0 20px var(--whatsapp-green);
+    transform: scale(1.08);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn .btn-desc {
+    color: rgba(255, 255, 255, 0.85); /* Forzamos un poco más de lectura en las descripciones de servicios */
+}
+
+/* --- ELEMENTOS DEL FOOTER --- */
 footer {
     width: 100%;
     margin-top: auto;
@@ -233,50 +255,54 @@ footer {
 .divider {
     color: var(--purple-light);
     margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px var(--purple-glow);
 }
 
 .quote {
     font-family: 'Cinzel', serif;
     font-size: 0.9rem;
     letter-spacing: 3px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     color: var(--gold-light);
 }
 
 .moon-phases {
-    font-size: 1.2rem;
-    letter-spacing: 5px;
-    margin-bottom: 25px;
+    font-size: 1.1rem;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
     color: var(--purple-light);
-    opacity: 0.8;
+    opacity: 0.75;
 }
 
 .social-icons {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .social-icons a {
     color: var(--text-muted);
-    font-size: 1.5rem;
-    margin: 0 10px;
+    font-size: 1.4rem;
+    margin: 0 12px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
     color: var(--purple-light);
-    text-shadow: 0 0 10px var(--purple-light);
+    text-shadow: 0 0 12px var(--purple-light);
 }
 
 .credits {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     letter-spacing: 2px;
     color: var(--text-muted);
+    line-height: 1.6;
 }
 
 .footer-logo {
     font-family: 'Cinzel Decorative', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--gold-main);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
