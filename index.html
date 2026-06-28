@@ -2,76 +2,75 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Solvens Amoris</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            background-color: #06010f;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Contenedor que mantiene la proporción perfecta de tu imagen */
-        .landing-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 500px; /* Tamaño ideal para visualización en móviles */
-            display: inline-block;
-        }
-
-        /* La imagen base con todo tu diseño premium */
-        .bg-image {
-            width: 100%;
-            display: block;
-            height: auto;
-        }
-
-        /* Estilo general para las zonas interactivas (Hotspots) */
-        .hotspot {
-            position: absolute;
-            left: 11%;  /* Alineado perfectamente con el ancho de tus botones */
-            width: 78%; /* Cubre el ancho exacto del botón */
-            height: 6.2%; /* Cubre el alto exacto del botón */
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.2s ease, box-shadow 0.2s ease;
-            background: rgba(255, 255, 255, 0); /* Invisible por defecto */
-        }
-
-        /* Efecto premium sutil al mantener pulsado o pasar el cursor */
-        .hotspot:active, .hotspot:hover {
-            background: rgba(212, 175, 55, 0.08);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2), inset 0 0 10px rgba(212, 175, 55, 0.1);
-        }
-
-        /* Coordenadas verticales exactas basadas en la proporción de tu imagen */
-        .btn-libro    { top: 43.1%; }
-        .btn-reloj    { top: 52.8%; }
-        .btn-whatsapp { top: 62.4%; }
-        .btn-contacto { top: 72.0%; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solvens Amoris - GitHub Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="landing-wrapper">
-        <!-- Tu imagen premium original -->
-        <img src="file_00000000f4b471fd875aea2ce785e37e_3.png" alt="Solvens Amoris" class="bg-image">
+    <div class="main-container">
+        <div class="stars-bg"></div>
 
-        <!-- Zonas interactivas invisibles posicionadas encima de cada botón -->
-        <a href="TU_LINK_DEL_LIBRO_AQUI" class="hotspot btn-libro" title="Comprar mi Libro"></a>
-        <a href="TU_LINK_DEL_RELOJ_AQUI" class="hotspot btn-reloj" title="Probar el Reloj Astrológico"></a>
-        <a href="#" class="hotspot btn-whatsapp" title="WhatsApp (Pendiente)"></a>
-        <a href="#" class="hotspot btn-contacto" title="Contacto (Pendiente)"></a>
+        <header>
+            <div class="zodiac-header">
+                <img src="assets/zodiac_sun.png" alt="Zodíaco Solvens Amoris">
+            </div>
+            <h1 class="main-title">Solvens Amoris</h1>
+            <p class="sub-title">GITHUB PROFILE / PORTFOLIO HUB</p>
+        </header>
+
+        <section class="profile-card">
+            <img src="assets/profile_avatar.png" alt="Avatar Solvens Amoris" class="avatar">
+            <p class="username">@SolvensAmoris</p>
+        </section>
+
+        <nav class="links-container">
+            <a href="TU_ENLACE_A_REPOSITORIOS" class="premium-button gold">
+                <i class="icon-book"></i> <div class="text-wrapper">
+                    <span class="btn-title">VER REPOSITORIOS</span>
+                    <span class="btn-desc">EXPLORA EL CÓDIGO DE 'EL LENGUAJE DE LA VID' Y MÁS</span>
+                </div>
+            </a>
+
+            <a href="TU_ENLACE_A_PROYECTOS" class="premium-button purple">
+                <i class="icon-compass"></i>
+                <div class="text-wrapper">
+                    <span class="btn-title">PROYECTOS ACTIVOS</span>
+                    <span class="btn-desc">ASTRO-CLOCK APP & INTÉRPRETES DE DATOS ESTELARES</span>
+                </div>
+            </a>
+
+            <a href="TU_ENLACE_A_COMUNIDAD" class="premium-button purple">
+                <i class="icon-community"></i>
+                <div class="text-wrapper">
+                    <span class="btn-title">COMUNIDAD Y FORO</span>
+                    <span class="btn-desc">ÚNETE AL CHAT DE MAGIA TÉCNICA Y DESARROLLO</span>
+                </div>
+            </a>
+
+            <a href="TU_ENLACE_A_CONTACTO" class="premium-button purple">
+                <i class="icon-scroll"></i>
+                <div class="text-wrapper">
+                    <span class="btn-title">CONTACTO Y COLABORACIÓN</span>
+                    <span class="btn-desc">HABLEMOS DE DESTINO Y CONSTRUCCIÓN DE PROYECTOS</span>
+                </div>
+            </a>
+        </nav>
+
+        <footer>
+            <p class="quote">“LO QUE BUSCAS, TAMBIÉN TE BUSCA.”</p>
+            <div class="moon-phases">
+                </div>
+            <div class="social-icons">
+                </div>
+            <div class="credits">
+                <img src="assets/logo_small.png" alt="Logo SA" class="footer-logo">
+                <p>SOLVENS AMORIS</p>
+                <p>TODOS LOS DERECHOS RESERVADOS</p>
+                <p>© 2026</p>
+            </div>
+        </footer>
     </div>
 
 </body>
