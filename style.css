@@ -109,10 +109,10 @@ body {
 }
 
 .avatar-img {
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 150%;
     border-radius: 50%;
-    border: 2px solid var(--gold-main);
+    border: 3px solid var(--gold-main);
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     object-fit: cover;
     z-index: 2; /* Importante: queda sobre el anillo */
